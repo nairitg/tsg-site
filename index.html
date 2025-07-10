@@ -1,69 +1,365 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TSG Capital</title>
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Favicon Links -->
-    <link rel="apple-touch-icon" sizes="180x180" href="tsg-favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="tsg-favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="tsg-favicons/favicon-16x16.png">
-    <link rel="manifest" href="tsg-favicons/site.webmanifest">
-    <link rel="icon" href="tsg-favicons/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TSG Capital</title>
+  <link rel="icon" href="/assets/logos/tsg-logo.png" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    .abril-fatface { font-family: 'Abril Fatface', serif; }
+    .inter { font-family: 'Inter', sans-serif; }
+    .gradient-overlay { background: linear-gradient(135deg, rgba(17,24,39,0.8) 0%, rgba(31,41,55,0.9) 100%); }
+    .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+    .card-hover { transition: all 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+    .portfolio-card { transition: all 0.3s ease; }
+    .portfolio-card:hover { transform: scale(1.03); }
+    .nav-link { 
+      position: relative; 
+      transition: all 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #374151;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <p>: OM NAMAH SHIVAY :</p>
-    </header>
+<body class="bg-gray-50 text-gray-800 inter">
 
-    <section class="intro-section">
-        <h1>Looking Forward, Always.</h1>
-        <a href="mailto:nairit@tsgcapital.in" class="email-button">GET IN TOUCH</a>
-    </section>
+  <!-- Enhanced Navbar -->
+  <nav class="fixed w-full bg-white/95 backdrop-blur-md shadow-lg z-50 border-b border-gray-200">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <a href="#home" class="flex items-center space-x-3">
+        <img src="/assets/logos/tsg-logo.png" alt="TSG Capital" class="h-10" />
+        <span class="text-2xl font-bold abril-fatface text-gray-900">TSG Capital</span>
+      </a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Home</a>
+        <a href="#about" class="nav-link text-gray-700 hover:text-gray-900 font-medium">About</a>
+        <a href="#investments" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Portfolio</a>
+        <a href="#team" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Team</a>
+        <a href="#contact" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Contact</a>
+      </div>
+      <button id="hamburger" class="md:hidden focus:outline-none">
+        <i class="fas fa-bars text-xl text-gray-800"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-white/95 backdrop-blur-md shadow-lg p-6">
+      <div class="flex flex-col space-y-4">
+        <a href="#home" class="text-gray-700 hover:text-gray-900 font-medium">Home</a>
+        <a href="#about" class="text-gray-700 hover:text-gray-900 font-medium">About</a>
+        <a href="#investments" class="text-gray-700 hover:text-gray-900 font-medium">Portfolio</a>
+        <a href="#team" class="text-gray-700 hover:text-gray-900 font-medium">Team</a>
+        <a href="#contact" class="text-gray-700 hover:text-gray-900 font-medium">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-    <section class="hero">
-        <div class="left-box">
-            <img src="tsg-logo.png" alt="Chess Piece">
-        </div>
-        <div class="right-box">
-            <h2>Hi,</h2>
-            <h3>Welcome.</h3>
-            <p>TSG Capital is a Fort, Mumbai based Family Office and IPO Advisor.</p>
-        </div>
-    </section>
+  <!-- Enhanced Hero Section -->
+  <section id="home" class="relative bg-cover bg-center h-screen" style="background-image:url('/assets/homepage/hero-background.png')">
+    <div class="absolute inset-0 gradient-overlay"></div>
+    <div class="relative container mx-auto px-6 h-full flex flex-col justify-center items-center text-center pt-16">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl text-white mb-6 abril-fatface text-shadow leading-tight">
+          Strategic Private Equity for Extraordinary Growth
+        </h1>
+        <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
+          Looking forward, always.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <section class="ideology">
-        <h2>INVESTMENT IDEOLOGY</h2>
-        <p>We are strategic investors across capital markets, real estate, and late-stage private opportunities.</p>
-        <p>Our investment approach is to identify and nurture high-potential ventures. We maintain a sector-agnostic approach with a particular focus on companies poised for exponential growth. We leverage our extensive network to amplify the growth of our portfolio companies - working with the end goal of creating something generational.</p>
-    </section>
+  <!-- Enhanced About Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 abril-fatface text-gray-900">About TSG Capital</h2>
+        <div class="w-20 h-1 bg-gray-800 mx-auto mb-6"></div>
+        <p class="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          We are strategic investors across capital markets, real estate, and late-stage private opportunities. Our investment approach is to identify and nurture high-potential ventures. We maintain a sector-agnostic approach with a particular focus on companies poised for exponential growth. We leverage our extensive network to amplify the growth of our portfolio companies - working with the end goal of creating something generational.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <section class="contact">
-        <h2>CONTACT US</h2>
-        <p>Catch Up Over Coconut Water!</p>
-        <a href="https://wa.me/+917021314949" class="chat-button">
-            <img src="whatsapp-icon.png" alt="WhatsApp Icon">Chat With Us
+  <!-- Enhanced Portfolio Section -->
+  <section id="investments" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 abril-fatface text-gray-900">Portfolio Companies</h2>
+        <div class="w-20 h-1 bg-gray-800 mx-auto mb-6"></div>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Our carefully curated portfolio represents the pinnacle of innovation across 
+          high-growth sectors, each company chosen for its exceptional potential and leadership.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <a href="https://jasmino.com/" target="_blank" 
+          class="portfolio-card block bg-white rounded-xl shadow-md hover:shadow-lg p-6 border border-gray-100 text-center">
+          <div class="flex justify-center items-center mb-4 h-16">
+            <img src="/assets/investments/jasmino-logo.svg" alt="Jasmino Logo" 
+              class="max-h-full max-w-full object-contain" />
+          </div>
+          <h3 class="text-lg font-semibold abril-fatface text-gray-900">Jasmino Corporation</h3>
         </a>
-        <p>TSG Capital</p>
-        <address>
-            Perin Nariman Street, Borabazar Precinct, Ballard Estate, Fort, Mumbai, Maharashtra, India
-        </address>
-    </section>
 
-    <section class="map">
-        <div class="mapouter">
-            <div class="gmap_canvas">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.911835015596!2d72.8357716!3d18.9352962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1dbc6e81c1d%3A0x167e30964ccea55f!2sPerin%20Nariman%20St%2C%20Fort%2C%20Mumbai%2C%20Maharashtra%20400001%2C%20India!5e0!3m2!1sen!2sus!4v1723439786624!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+        <a href="https://c2c-as.com/" target="_blank" 
+          class="portfolio-card block bg-white rounded-xl shadow-md hover:shadow-lg p-6 border border-gray-100 text-center">
+          <div class="flex justify-center items-center mb-4 h-16">
+            <img src="/assets/investments/c2c-logo.svg" alt="C2C Logo" 
+              class="max-h-full max-w-full object-contain" />
+          </div>
+          <h3 class="text-lg font-semibold abril-fatface text-gray-900">C2C Advanced Systems</h3>
+        </a>
+
+        <a href="https://www.gh2solar.com/" target="_blank" 
+          class="portfolio-card block bg-white rounded-xl shadow-md hover:shadow-lg p-6 border border-gray-100 text-center">
+          <div class="flex justify-center items-center mb-4 h-16">
+            <img src="/assets/investments/gh2 solar.png" alt="GH2 Solar Logo" 
+              class="max-h-full max-w-full object-contain" />
+          </div>
+          <h3 class="text-lg font-semibold abril-fatface text-gray-900">GH2 Solar</h3>
+        </a>
+
+        <a href="https://rikun.co.in/" target="_blank" 
+          class="portfolio-card block bg-white rounded-xl shadow-md hover:shadow-lg p-6 border border-gray-100 text-center">
+          <div class="flex justify-center items-center mb-4 h-16">
+            <img src="/assets/investments/rikun-logo.jpg" alt="Rikun Logo" 
+              class="max-h-full max-w-full object-contain" />
+          </div>
+          <h3 class="text-lg font-semibold abril-fatface text-gray-900">Rikun Electricals</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="bg-gray-900 rounded-2xl p-8">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 abril-fatface text-white">Leadership Team</h2>
+          <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
+          <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+            Our distinguished team brings together decades of investment expertise, 
+            operational excellence, and strategic vision.
+          </p>
         </div>
-    </section>
+        
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <a href="https://www.linkedin.com/in/nairit69/" target="_blank" 
+            class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 text-center transform hover:-translate-y-1">
+            <div class="w-20 h-20 mx-auto mb-3">
+              <img src="/assets/tsg-team/nairit.svg" alt="Nairit Gala" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
+            </div>
+            <h3 class="text-lg font-semibold mb-1 abril-fatface text-gray-900">Nairit Gala</h3>
+            <p class="text-gray-600 text-sm font-medium">Chief Investment Officer</p>
+          </a>
 
-    <footer>
-        <p>COPYRIGHT © 2024 TSG CAPITAL - ALL RIGHTS RESERVED.</p>
-    </footer>
+          <a href="https://www.linkedin.com/in/aairan/" target="_blank" 
+            class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 text-center transform hover:-translate-y-1">
+            <div class="w-20 h-20 mx-auto mb-3">
+              <img src="/assets/tsg-team/aaryan.jpeg" alt="Aaryan Bhagat" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
+            </div>
+            <h3 class="text-lg font-semibold mb-1 abril-fatface text-gray-900">Aaryan Bhagat</h3>
+            <p class="text-gray-600 text-sm font-medium">Analyst</p>
+          </a>
 
-    <script src="script.js"></script>
+          <a href="https://www.linkedin.com/in/viraj-shah-a530372a2/" target="_blank" 
+            class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 text-center transform hover:-translate-y-1">
+            <div class="w-20 h-20 mx-auto mb-3">
+              <img src="/assets/tsg-team/viraj.svg" alt="Viraj Shah" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
+            </div>
+            <h3 class="text-lg font-semibold mb-1 abril-fatface text-gray-900">Viraj Shah</h3>
+            <p class="text-gray-600 text-sm font-medium">Business Development</p>
+          </a>
+
+          <a href="https://www.linkedin.com/in/vansh-gosar-a396b1270/" target="_blank" 
+            class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 text-center transform hover:-translate-y-1">
+            <div class="w-20 h-20 mx-auto mb-3">
+              <img src="/assets/tsg-team/vansh.svg" alt="Vansh Gosar" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
+            </div>
+            <h3 class="text-lg font-semibold mb-1 abril-fatface text-gray-900">Vansh Gosar</h3>
+            <p class="text-gray-600 text-sm font-medium">Analyst</p>
+          </a>
+
+          <a href="https://www.linkedin.com/in/aarish-shah-8528b6275/" target="_blank" 
+            class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 text-center transform hover:-translate-y-1">
+            <div class="w-20 h-20 mx-auto mb-3">
+              <img src="/assets/tsg-team/aarish.svg" alt="Aarish Shah" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
+            </div>
+            <h3 class="text-lg font-semibold mb-1 abril-fatface text-gray-900">Aarish Shah</h3>
+            <p class="text-gray-600 text-sm font-medium">Analyst</p>
+          </a>
+
+          <a href="https://www.linkedin.com/in/deeepp/" target="_blank" 
+            class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 text-center transform hover:-translate-y-1">
+            <div class="w-20 h-20 mx-auto mb-3">
+              <img src="/assets/tsg-team/deep.svg" alt="Deep Shah" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
+            </div>
+            <h3 class="text-lg font-semibold mb-1 abril-fatface text-gray-900">Deep Shah</h3>
+            <p class="text-gray-600 text-sm font-medium">Business Development</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Contact Section -->
+  <section id="contact" class="py-16 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 abril-fatface text-white">Connect With Us</h2>
+        <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
+        <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Ready to explore strategic partnership opportunities? 
+          We welcome conversations with exceptional entrepreneurs and visionary leaders.
+        </p>
+      </div>
+
+      <div class="flex flex-col lg:flex-row lg:space-x-12 space-y-8 lg:space-y-0 max-w-6xl mx-auto">
+        <div class="w-full lg:w-1/2">
+          <form action="https://formspree.io/nairit@tsgcapital.in" method="POST" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-semibold text-gray-300 mb-2">Full Name</label>
+                <input type="text" id="name" name="name" required
+                  class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent transition-all text-white placeholder-gray-400" 
+                  placeholder="Your Name" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-semibold text-gray-300 mb-2">Email Address</label>
+                <input type="email" id="email" name="email" required
+                  class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent transition-all text-white placeholder-gray-400" 
+                  placeholder="your@email.com" />
+              </div>
+            </div>
+
+            <div>
+              <label for="subject" class="block text-sm font-semibold text-gray-300 mb-2">Subject</label>
+              <input type="text" id="subject" name="subject" required
+                class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent transition-all text-white placeholder-gray-400" 
+                placeholder="Partnership Inquiry" />
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-semibold text-gray-300 mb-2">Message</label>
+              <textarea id="message" name="message" rows="5" required
+                class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent transition-all text-white placeholder-gray-400" 
+                placeholder="Tell us about your company and investment needs..."></textarea>
+            </div>
+
+            <div class="flex justify-center">
+              <button type="submit"
+                class="px-8 py-3 bg-white text-gray-900 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white font-semibold transition-all transform hover:scale-105">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="w-full lg:w-1/2">
+          <div class="bg-gray-800 rounded-xl p-6 mb-6">
+            <h3 class="text-xl font-semibold text-white mb-4 abril-fatface">Mumbai Office</h3>
+            <div class="space-y-3">
+              <div class="flex items-start space-x-3">
+                <i class="fas fa-map-marker-alt text-white text-lg mt-1"></i>
+                <div>
+                  <p class="text-gray-300 text-sm leading-relaxed">
+                    R415, Rotunda Building<br />
+                    Bombay Stock Exchange Building<br />
+                    726, Mumbai Samachar Marg<br />
+                    Kala Ghoda, Fort, Mumbai<br />
+                    Maharashtra 400001
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-envelope text-white text-lg"></i>
+                <p class="text-gray-300 text-sm">nairit@tsgcapital.in</p>
+                <a href="https://www.linkedin.com/company/tsg-capital-in?originalSubdomain=in" 
+                   target="_blank" 
+                   class="inline-flex items-center justify-center w-7 h-7 bg-blue-600 hover:bg-blue-700 rounded-full transition-colors ml-2" 
+                   aria-label="LinkedIn">
+                  <i class="fab fa-linkedin text-xs text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="h-[250px] rounded-xl overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps?q=R415,+Rotunda+Building,+Bombay+Stock+Exchange+Building,+726,+Mumbai+Samachar+Marg,+Kala+Ghoda,+Fort,+Mumbai,+Maharashtra+400001&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simplified Footer -->
+  <footer class="bg-black text-gray-300 py-6">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col items-center space-y-3">
+        <div class="flex items-center space-x-3">
+          <img src="/assets/logos/tsg-logo.png" alt="TSG Capital" class="h-6" />
+          <span class="text-lg font-bold abril-fatface text-white">TSG Capital</span>
+        </div>
+        <p class="text-gray-500 text-center text-sm">
+          &copy; 2025 TSG Capital. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Hide mobile menu when clicking navigation links
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+  </script>
 </body>
 </html>

@@ -12,17 +12,46 @@
   <link rel="icon" href="/assets/tsg-favicons/favicon.ico" type="image/x-icon">
 
   <link rel="icon" href="/assets/logos/tsg-logo.png" type="image/svg+xml" />
-  <!-- Premium Old Money Fonts -->
+  <!-- Import Playfair Display for TSG Capital branding -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
     html { scroll-behavior: smooth; }
-    .playfair { font-family: 'Playfair Display', serif; }
-    .cormorant { font-family: 'Cormorant Garamond', serif; }
-    .crimson { font-family: 'Crimson Text', serif; }
+    
+    /* Arial font family with elegant fallbacks */
+    body, * {
+      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    }
+    
+    /* Playfair Display specifically for TSG Capital branding */
+    .tsg-brand {
+      font-family: 'Playfair Display', serif !important;
+    }
+    
+    /* Maintain elegant styling with Arial */
+    .elegant-heading {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    
+    .elegant-subheading {
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    
+    .elegant-body {
+      font-weight: 400;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+    
+    .elegant-light {
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+    
     .gradient-overlay { background: linear-gradient(135deg, rgba(17,24,39,0.8) 0%, rgba(31,41,55,0.9) 100%); }
     .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
     .card-hover { transition: all 0.3s ease; }
@@ -56,11 +85,11 @@
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 cormorant">
+<body class="bg-gray-50 text-gray-800">
 
   <!-- OM NAMAH SHIVAY Header -->
   <div class="header-banner">
-    <h1 class="text-white text-sm font-medium tracking-widest playfair">:OM NAMAH SHIVAY:</h1>
+    <h1 class="text-white text-sm font-medium tracking-widest elegant-heading">:OM NAMAH SHIVAY:</h1>
   </div>
 
   <!-- Enhanced Navbar -->
@@ -68,14 +97,14 @@
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
       <a href="#home" class="flex items-center space-x-3">
         <img src="/assets/logos/tsg-logo.png" alt="TSG Capital" class="h-10" />
-        <span class="text-2xl font-bold playfair text-gray-900">TSG Capital</span>
+        <span class="text-2xl font-bold tsg-brand text-gray-900">TSG Capital</span>
       </a>
       <div class="hidden md:flex space-x-8">
-        <a href="#home" class="nav-link text-gray-700 hover:text-gray-900 font-medium crimson">Home</a>
-        <a href="#about" class="nav-link text-gray-700 hover:text-gray-900 font-medium crimson">About</a>
-        <a href="#investments" class="nav-link text-gray-700 hover:text-gray-900 font-medium crimson">Portfolio</a>
-        <a href="#team" class="nav-link text-gray-700 hover:text-gray-900 font-medium crimson">Team</a>
-        <a href="#contact" class="nav-link text-gray-700 hover:text-gray-900 font-medium crimson">Contact</a>
+        <a href="#home" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Home</a>
+        <a href="#about" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">About</a>
+        <a href="#investments" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Portfolio</a>
+        <a href="#team" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Team</a>
+        <a href="#contact" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Contact</a>
       </div>
       <button id="hamburger" class="md:hidden focus:outline-none">
         <i class="fas fa-bars text-xl text-gray-800"></i>
@@ -83,11 +112,11 @@
     </div>
     <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-white/95 backdrop-blur-md shadow-lg p-6">
       <div class="flex flex-col space-y-4">
-        <a href="#home" class="text-gray-700 hover:text-gray-900 font-medium crimson">Home</a>
-        <a href="#about" class="text-gray-700 hover:text-gray-900 font-medium crimson">About</a>
-        <a href="#investments" class="text-gray-700 hover:text-gray-900 font-medium crimson">Portfolio</a>
-        <a href="#team" class="text-gray-700 hover:text-gray-900 font-medium crimson">Team</a>
-        <a href="#contact" class="text-gray-700 hover:text-gray-900 font-medium crimson">Contact</a>
+        <a href="#home" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Home</a>
+        <a href="#about" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">About</a>
+        <a href="#investments" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Portfolio</a>
+        <a href="#team" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Team</a>
+        <a href="#contact" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Contact</a>
       </div>
     </div>
   </nav>
@@ -97,10 +126,10 @@
     <div class="absolute inset-0 gradient-overlay"></div>
     <div class="relative container mx-auto px-6 h-full flex flex-col justify-center items-center text-center pt-16">
       <div class="max-w-5xl mx-auto">
-        <h1 class="text-4xl md:text-6xl lg:text-7xl text-white mb-6 playfair text-shadow leading-tight font-bold">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl text-white mb-6 elegant-heading text-shadow leading-tight">
           Strategic Private Equity for Extraordinary Growth
         </h1>
-        <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed cormorant font-light">
+        <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed elegant-light">
           Looking forward, always.
         </p>
       </div>
@@ -111,9 +140,9 @@
   <section id="about" class="py-16 bg-white">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 playfair text-gray-900">About TSG Capital</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 elegant-heading text-gray-900">About</h2>
         <div class="w-20 h-1 bg-gray-800 mx-auto mb-6"></div>
-        <p class="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed cormorant">
+        <p class="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed elegant-body">
           We are strategic investors across capital markets, real estate, and late-stage private opportunities. Our investment approach is to identify and nurture high-potential ventures. We maintain a sector-agnostic approach with a particular focus on companies poised for exponential growth. We leverage our extensive network to amplify the growth of our portfolio companies - working with the end goal of creating something generational.
         </p>
       </div>
@@ -124,9 +153,9 @@
   <section id="investments" class="py-16 bg-gray-50">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 playfair text-gray-900">Portfolio Companies</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 elegant-heading text-gray-900">Portfolio Companies</h2>
         <div class="w-20 h-1 bg-gray-800 mx-auto mb-6"></div>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed cormorant">
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed elegant-body">
           Our carefully curated portfolio represents innovation across 
           high-growth sectors, each company chosen for its exceptional potential and leadership.
         </p>
@@ -139,7 +168,7 @@
             <img src="/assets/investments/jasmino-logo.svg" alt="Jasmino Logo" 
               class="max-h-full max-w-full object-contain" />
           </div>
-          <h3 class="text-lg font-semibold playfair text-gray-900">Jasmino Corporation</h3>
+          <h3 class="text-lg font-semibold elegant-subheading text-gray-900">Jasmino Corporation</h3>
         </a>
 
         <a href="https://c2c-as.com/" target="_blank" 
@@ -148,7 +177,7 @@
             <img src="/assets/investments/c2c-logo.svg" alt="C2C Logo" 
               class="max-h-full max-w-full object-contain" />
           </div>
-          <h3 class="text-lg font-semibold playfair text-gray-900">C2C Advanced Systems</h3>
+          <h3 class="text-lg font-semibold elegant-subheading text-gray-900">C2C Advanced Systems</h3>
         </a>
 
         <a href="https://www.gh2solar.com/" target="_blank" 
@@ -157,7 +186,7 @@
             <img src="/assets/investments/gh2 solar.png" alt="GH2 Solar Logo" 
               class="max-h-full max-w-full object-contain" />
           </div>
-          <h3 class="text-lg font-semibold playfair text-gray-900">GH2 Solar</h3>
+          <h3 class="text-lg font-semibold elegant-subheading text-gray-900">GH2 Solar</h3>
         </a>
 
         <a href="https://rikun.co.in/" target="_blank" 
@@ -166,7 +195,7 @@
             <img src="/assets/investments/rikun-logo.jpg" alt="Rikun Logo" 
               class="max-h-full max-w-full object-contain" />
           </div>
-          <h3 class="text-lg font-semibold playfair text-gray-900">Rikun Electricals</h3>
+          <h3 class="text-lg font-semibold elegant-subheading text-gray-900">Rikun Electricals</h3>
         </a>
       </div>
     </div>
@@ -177,12 +206,8 @@
     <div class="container mx-auto px-6">
       <div class="bg-gray-900 rounded-2xl p-8">
         <div class="text-center mb-10">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 playfair text-white">Leadership Team</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 elegant-heading text-white">Leadership Team</h2>
           <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
-          <!-- <p class="text-lg text-gray-300 max-w-3xl mx-auto cormorant">
-            Our distinguished team brings together decades of investment expertise, 
-            operational excellence, and strategic vision.
-          </p> -->
         </div>
         
         <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -191,8 +216,8 @@
             <div class="w-20 h-20 mx-auto mb-3">
               <img src="/assets/tsg-team/nairit.svg" alt="Nairit Gala" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
             </div>
-            <h3 class="text-lg font-semibold mb-1 playfair text-gray-900">Nairit Gala</h3>
-            <p class="text-gray-600 text-sm font-medium crimson">Chief Investment Officer</p>
+            <h3 class="text-lg font-semibold mb-1 elegant-subheading text-gray-900">Nairit Gala</h3>
+            <p class="text-gray-600 text-sm font-medium elegant-body">Chief Investment Officer</p>
           </a>
 
           <a href="https://www.linkedin.com/in/aairan/" target="_blank" 
@@ -200,8 +225,8 @@
             <div class="w-20 h-20 mx-auto mb-3">
               <img src="/assets/tsg-team/aaryan.jpeg" alt="Aaryan Bhagat" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
             </div>
-            <h3 class="text-lg font-semibold mb-1 playfair text-gray-900">Aaryan Bhagat</h3>
-            <p class="text-gray-600 text-sm font-medium crimson">Analyst</p>
+            <h3 class="text-lg font-semibold mb-1 elegant-subheading text-gray-900">Aaryan Bhagat</h3>
+            <p class="text-gray-600 text-sm font-medium elegant-body">Analyst</p>
           </a>
 
           <a href="https://www.linkedin.com/in/viraj-shah-a530372a2/" target="_blank" 
@@ -209,8 +234,8 @@
             <div class="w-20 h-20 mx-auto mb-3">
               <img src="/assets/tsg-team/viraj.svg" alt="Viraj Shah" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
             </div>
-            <h3 class="text-lg font-semibold mb-1 playfair text-gray-900">Viraj Shah</h3>
-            <p class="text-gray-600 text-sm font-medium crimson">Business Development</p>
+            <h3 class="text-lg font-semibold mb-1 elegant-subheading text-gray-900">Viraj Shah</h3>
+            <p class="text-gray-600 text-sm font-medium elegant-body">Business Development</p>
           </a>
 
           <a href="https://www.linkedin.com/in/vansh-gosar-a396b1270/" target="_blank" 
@@ -218,8 +243,8 @@
             <div class="w-20 h-20 mx-auto mb-3">
               <img src="/assets/tsg-team/vansh.svg" alt="Vansh Gosar" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
             </div>
-            <h3 class="text-lg font-semibold mb-1 playfair text-gray-900">Vansh Gosar</h3>
-            <p class="text-gray-600 text-sm font-medium crimson">Analyst</p>
+            <h3 class="text-lg font-semibold mb-1 elegant-subheading text-gray-900">Vansh Gosar</h3>
+            <p class="text-gray-600 text-sm font-medium elegant-body">Analyst</p>
           </a>
 
           <a href="https://www.linkedin.com/in/aarish-shah-8528b6275/" target="_blank" 
@@ -227,8 +252,8 @@
             <div class="w-20 h-20 mx-auto mb-3">
               <img src="/assets/tsg-team/aarish.svg" alt="Aarish Shah" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
             </div>
-            <h3 class="text-lg font-semibold mb-1 playfair text-gray-900">Aarish Shah</h3>
-            <p class="text-gray-600 text-sm font-medium crimson">Analyst</p>
+            <h3 class="text-lg font-semibold mb-1 elegant-subheading text-gray-900">Aarish Shah</h3>
+            <p class="text-gray-600 text-sm font-medium elegant-body">Analyst</p>
           </a>
 
           <a href="https://www.linkedin.com/in/deeepp/" target="_blank" 
@@ -236,8 +261,8 @@
             <div class="w-20 h-20 mx-auto mb-3">
               <img src="/assets/tsg-team/deep.svg" alt="Deep Shah" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
             </div>
-            <h3 class="text-lg font-semibold mb-1 playfair text-gray-900">Deep Shah</h3>
-            <p class="text-gray-600 text-sm font-medium crimson">Business Development</p>
+            <h3 class="text-lg font-semibold mb-1 elegant-subheading text-gray-900">Deep Shah</h3>
+            <p class="text-gray-600 text-sm font-medium elegant-body">Business Development</p>
           </a>
         </div>
       </div>
@@ -248,11 +273,10 @@
   <section id="contact" class="py-16 bg-gray-900">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 playfair text-white">Connect With Us</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 elegant-heading text-white">Connect With Us</h2>
         <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
-        <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed cormorant mb-8">
+        <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed elegant-body mb-8">
           Ready to explore strategic partnership opportunities? 
-          <!-- We welcome conversations with exceptional entrepreneurs and visionary leaders. -->
         </p>
       </div>
 
@@ -260,22 +284,22 @@
         <!-- Left side - Contact Info -->
         <div class="space-y-6">
           <div class="text-center lg:text-left">
-            <p class="text-xl text-white mb-6 playfair font-light">
+            <p class="text-xl text-white mb-6 elegant-light">
               Catch up over coconut water?
             </p>
-            <a href="https://wa.me/+917021314949" class="inline-flex items-center space-x-3 px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all transform hover:scale-105 font-semibold playfair">
+            <a href="https://wa.me/+917021314949" class="inline-flex items-center space-x-3 px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all transform hover:scale-105 font-semibold elegant-subheading">
               <i class="fab fa-whatsapp text-xl"></i>
               <span>Chat with us</span>
             </a>
           </div>
 
           <div class="bg-gray-800 rounded-xl p-6">
-            <h3 class="text-xl font-semibold text-white mb-4 playfair">Mumbai Office</h3>
+            <h3 class="text-xl font-semibold text-white mb-4 elegant-subheading">Mumbai Office</h3>
             <div class="space-y-4">
               <div class="flex items-start space-x-3">
                 <i class="fas fa-map-marker-alt text-white text-lg mt-1"></i>
                 <div>
-                  <p class="text-gray-300 text-sm leading-relaxed cormorant">
+                  <p class="text-gray-300 text-sm leading-relaxed elegant-body">
                     <a href="https://www.google.com/maps/place/Bombay+Stock+Exchange/@18.9299891,72.8308331,17z/data=!3m2!4b1!5s0x3be7ceffab3f7fd9:0x6dac2cecd0ede18b!4m6!3m5!1s0x3be7d1c363d83329:0xc3516cb22743963b!8m2!3d18.9299891!4d72.833408!16s%2Fg%2F11b77pw1yr?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="hover:underline">
                       R415, Rotunda Building<br />
                       Bombay Stock Exchange Building<br />
@@ -288,7 +312,7 @@
               </div>
               <div class="flex items-center space-x-3">
                 <i class="fas fa-envelope text-white text-lg"></i>
-                <p class="text-gray-300 text-sm cormorant">
+                <p class="text-gray-300 text-sm elegant-body">
                   <a href="mailto:nairit@tsgcapital.in" class="hover:underline">nairit@tsgcapital.in</a>
                 </p>
                 <a href="https://www.linkedin.com/company/tsg-capital-in?originalSubdomain=in" 
@@ -323,9 +347,9 @@
       <div class="flex flex-col items-center space-y-2">
         <div class="flex items-center space-x-3">
           <img src="/assets/logos/tsg-logo.png" alt="TSG Capital" class="h-5" />
-          <span class="text-base font-bold playfair text-white">TSG Capital</span>
+          <span class="text-base font-bold tsg-brand text-white">TSG Capital</span>
         </div>
-        <p class="text-gray-500 text-center text-xs cormorant">
+        <p class="text-gray-500 text-center text-xs elegant-body">
           &copy; 2025 TSG Capital. All rights reserved.
         </p>
       </div>

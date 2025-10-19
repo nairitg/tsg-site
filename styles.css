@@ -1,167 +1,250 @@
 /* Global Styles */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
+html { 
+  scroll-behavior: smooth; 
 }
 
-/* Header */
-header {
-    background-color: #333;
-    color: #adadad;
-    text-align: center;
-    padding: 3px 0;
+body, * {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Intro Section */
-.intro-section {
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+/* Playfair Display specifically for TSG Capital branding */
+.tsg-brand {
+  font-family: 'Playfair Display', serif !important;
 }
 
-.intro-section h1 {
-    font-size: 50px;
+/* Maintain elegant styling with Arial */
+.elegant-heading {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
-.email-button {
-    padding: 10px 20px;
-    font-size: 15px;
-    color: #fff;
-    background-color: #000;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 2px solid #fff;
+.elegant-subheading {
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-.email-button:hover {
-    color: #000;
-    background-color: #fff;
-    border: 2px solid #000;
+.elegant-body {
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
 }
 
-/* Hero Section */
-.hero {
-    display: flex;
-    height: 100vh;
+.elegant-light {
+  font-weight: 300;
+  letter-spacing: 0.02em;
 }
 
-.left-box, .right-box {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Utility Classes */
+.gradient-overlay { 
+  background: linear-gradient(135deg, rgba(17,24,39,0.8) 0%, rgba(31,41,55,0.9) 100%); 
 }
 
-.left-box {
-    background-color: #000;
+.text-shadow { 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
 }
 
-.left-box img {
-    max-width: 100%;
-    max-height: 100%;
+/* Navigation Styles */
+.nav-link { 
+  position: relative; 
+  transition: all 0.3s ease;
 }
 
-.right-box {
-    background-color: #fff;
-    flex-direction: column;
-    text-align: center;
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #374151;
+  transition: width 0.3s ease;
 }
 
-.right-box h2, .right-box h3, .right-box p {
-    font-size: 2rem;
-    margin: 0;
-    line-height: 1.5;
+.nav-link:hover::after {
+  width: 100%;
 }
 
-.right-box h2 {
-    margin-bottom: 10px;
+/* Header Banner */
+.header-banner {
+  background: linear-gradient(90deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #333;
 }
 
-.right-box h3 {
-    margin-bottom: 20px;
+/* Improved Carousel Styles */
+.carousel-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px;
 }
 
-/* Ideology Section */
-.ideology, .contact {
-    text-align: center;
-    padding: 50px 20px;
+.carousel-wrapper {
+  overflow: hidden;
+  border-radius: 16px;
+  padding: 20px 0;
 }
 
-.ideology {
-    background-color: #333;
-    color: #fff;
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  gap: 2rem;
+  will-change: transform;
 }
 
-.ideology h2 {
-    padding-bottom: 20px;
+.carousel-item {
+  flex: 0 0 calc(25% - 1.5rem);
+  min-width: 0;
+  box-sizing: border-box;
 }
 
-.ideology p {
-    margin: 0 auto;
-    max-width: 800px;
+/* Responsive breakpoints for carousel */
+@media (max-width: 1024px) {
+  .carousel-item {
+    flex: 0 0 calc(33.333% - 1.334rem);
+  }
 }
 
-/* Contact Section */
-.contact h2 {
-    font-size: 30px;
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 calc(50% - 1rem);
+  }
+  .carousel-container {
+    padding: 0 60px;
+  }
 }
 
-.chat-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    background-color: #31363F;
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
+@media (max-width: 480px) {
+  .carousel-container {
+    padding: 0 50px;
+  }
 }
 
-.chat-button img {
-    margin-right: 8px;
-    width: 20px;
-    height: 20px;
+/* Carousel Navigation Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: 2px solid #e5e7eb;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Map Section */
-.map {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #fff;
+.carousel-btn:hover:not(:disabled) {
+  background: #f9fafb;
+  border-color: #9ca3af;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transform: translateY(-50%) scale(1.1);
 }
 
-.mapouter {
-    position: relative;
-    text-align: right;
-    height: 400px;
-    width: 100%;
+.carousel-btn:active:not(:disabled) {
+  transform: translateY(-50%) scale(0.95);
 }
 
-.gmap_canvas {
-    overflow: hidden;
-    background: none !important;
-    height: 400px;
-    width: 100%;
+.carousel-btn-prev {
+  left: 15px;
 }
 
-iframe {
-    border: 0;
-    width: 100%;
-    height: 400px;
+.carousel-btn-next {
+  right: 15px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 20px 0;
-    color: #333;
+.carousel-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #f3f4f6;
+}
+
+/* Portfolio Card Styles - Improved */
+.portfolio-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  border-color: #9ca3af;
+}
+
+/* Update Card Styles */
+.update-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.update-card:hover {
+  transform: translateY(-4px) translateZ(0);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* LinkedIn Embed Styles */
+.linkedin-embed-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.linkedin-embed-container iframe {
+  width: 100%;
+  border: none;
+  min-height: 500px;
+}
+
+/* Carousel Indicators */
+#carouselIndicators button {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  outline: none;
+}
+
+#carouselIndicators button:hover {
+  opacity: 0.8;
+}
+
+/* Prevent text selection during carousel interaction */
+.carousel-track {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Hardware acceleration for smooth animations */
+.carousel-track,
+.portfolio-card,
+.update-card {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+  transition: all 0.3s ease;
 }

@@ -10,80 +10,13 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/tsg-favicons/favicon-16x16.png">
   <link rel="manifest" href="tsg-favicons/site.webmanifest">
   <link rel="icon" href="/assets/tsg-favicons/favicon.ico" type="image/x-icon">
-
   <link rel="icon" href="/assets/logos/tsg-logo.png" type="image/svg+xml" />
+  
   <!-- Import Playfair Display for TSG Capital branding -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <style>
-    html { scroll-behavior: smooth; }
-    
-    /* Arial font family with elegant fallbacks */
-    body, * {
-      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-    }
-    
-    /* Playfair Display specifically for TSG Capital branding */
-    .tsg-brand {
-      font-family: 'Playfair Display', serif !important;
-    }
-    
-    /* Maintain elegant styling with Arial */
-    .elegant-heading {
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-    
-    .elegant-subheading {
-      font-weight: 600;
-      letter-spacing: -0.01em;
-    }
-    
-    .elegant-body {
-      font-weight: 400;
-      line-height: 1.6;
-      letter-spacing: 0.01em;
-    }
-    
-    .elegant-light {
-      font-weight: 300;
-      letter-spacing: 0.02em;
-    }
-    
-    .gradient-overlay { background: linear-gradient(135deg, rgba(17,24,39,0.8) 0%, rgba(31,41,55,0.9) 100%); }
-    .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-    .card-hover { transition: all 0.3s ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-    .portfolio-card { transition: all 0.3s ease; }
-    .portfolio-card:hover { transform: scale(1.03); }
-    .nav-link { 
-      position: relative; 
-      transition: all 0.3s ease;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background-color: #374151;
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    .header-banner {
-      background: linear-gradient(90deg, #000000 0%, #1a1a1a 50%, #000000 100%);
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-bottom: 1px solid #333;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -102,6 +35,7 @@
       <div class="hidden md:flex space-x-8">
         <a href="#home" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Home</a>
         <a href="#about" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">About</a>
+        <a href="#updates" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Updates</a>
         <a href="#investments" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Portfolio</a>
         <a href="#team" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Team</a>
         <a href="#contact" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Contact</a>
@@ -110,10 +44,11 @@
         <i class="fas fa-bars text-xl text-gray-800"></i>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-white/95 backdrop-blur-md shadow-lg p-6">
+    <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-white/95 backdrop-blur-md shadow-lg p-6 z-50">
       <div class="flex flex-col space-y-4">
         <a href="#home" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Home</a>
         <a href="#about" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">About</a>
+        <a href="#updates" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Updates</a>
         <a href="#investments" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Portfolio</a>
         <a href="#team" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Team</a>
         <a href="#contact" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Contact</a>
@@ -149,80 +84,145 @@
     </div>
   </section>
 
-  <!-- Enhanced Portfolio Section -->
-  <section id="investments" class="py-16 bg-gray-50">
+  <!-- Latest Updates Section with LinkedIn Embed -->
+  <section id="updates" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 elegant-heading text-gray-900">Latest Updates</h2>
+        <div class="w-20 h-1 bg-gray-800 mx-auto mb-6"></div>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed elegant-body">
+          Stay informed about our latest investments, portfolio insights, and market perspectives.
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto">
+        <!-- LinkedIn Post Embed -->
+        <div class="linkedin-embed-container">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7377583993288007680?collapsed=1" 
+          height="335" width="252" frameborder="0" allowfullscreen="" title="Embedded post">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Portfolio Section with Improved Carousel -->
+  <section id="investments" class="py-16 bg-white">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-4 elegant-heading text-gray-900">Portfolio Companies</h2>
         <div class="w-20 h-1 bg-gray-800 mx-auto mb-6"></div>
         <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed elegant-body">
-          Our carefully curated portfolio represents innovation across 
-          high-growth sectors, each company chosen for its exceptional potential and leadership.
+          Our carefully curated portfolio represents innovation across high-growth sectors, each company chosen for its exceptional potential and leadership.
         </p>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-        <a href="https://www.shreeref.com/" target="_blank" 
-          class="portfolio-card block bg-white rounded-xl shadow-md hover:shadow-lg p-6 border border-gray-100 text-center">
-          <div class="flex justify-center items-center mb-4 h-16">
-            <img src="/assets/investments/shree-refrigerations-logo.png" alt="Shree Refrigerations Logo" 
-              class="max-h-full max-w-full object-contain" />
-          </div>
-          <h3 class="text-lg font-semibold elegant-subheading text-gray-900">Shree Refrigerations Ltd</h3>
-        </a>
+      <div class="carousel-container">
+        <button class="carousel-btn carousel-btn-prev" id="prevBtn">
+          <i class="fas fa-chevron-left text-gray-600"></i>
+        </button>
+        
+        <div class="carousel-wrapper">
+          <div class="carousel-track" id="carouselTrack">
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-        <a href="https://sbsaviation.in/" target="_blank" 
-          class="portfolio-card block bg-white rounded-xl shadow-md hover:shadow-lg p-6 border border-gray-100 text-center">
-          <div class="flex justify-center items-center mb-4 h-16">
-            <img src="/assets/investments/flysbs-logo.png" alt="FlySBS Logo" 
-              class="max-h-full max-w-full object-contain" />
-          </div>
-          <h3 class="text-lg font-semibold elegant-subheading text-gray-900">FlySBS</h3>
-        </a>
+            <!-- Portfolio Item 7 -->
+            <div class="carousel-item">
+              <a href="https://www.kshemapower.com/" target="_blank" 
+                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
+                <div class="flex justify-center items-center mb-4 h-20">
+                  <img src="/assets/investments/kshema-logo.png" alt="Kshema Power Logo" 
+                    class="max-h-full max-w-full object-contain" />
+                </div>
+                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">Kshema Power</h3>
+              </a>
+            </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-        <a href="https://jasmino.com/" target="_blank" 
-          class="portfolio-card block bg-white rounded-xl shadow-md hover:shadow-lg p-6 border border-gray-100 text-center">
-          <div class="flex justify-center items-center mb-4 h-16">
-            <img src="/assets/investments/jasmino-logo.svg" alt="Jasmino Logo" 
-              class="max-h-full max-w-full object-contain" />
-          </div>
-          <h3 class="text-lg font-semibold elegant-subheading text-gray-900">Jasmino Corporation</h3>
-        </a>
+            <!-- Portfolio Item 6 -->
+            <div class="carousel-item">
+              <a href="https://www.shreeref.com/" target="_blank" 
+                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
+                <div class="flex justify-center items-center mb-4 h-20">
+                  <img src="/assets/investments/shree-refrigerations-logo.png" alt="Shree Refrigerations Logo" 
+                    class="max-h-full max-w-full object-contain" />
+                </div>
+                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">Shree Refrigerations Ltd</h3>
+              </a>
+            </div>
 
-        <a href="https://c2c-as.com/" target="_blank" 
-          class="portfolio-card block bg-white rounded-xl shadow-md hover:shadow-lg p-6 border border-gray-100 text-center">
-          <div class="flex justify-center items-center mb-4 h-16">
-            <img src="/assets/investments/c2c-logo.svg" alt="C2C Logo" 
-              class="max-h-full max-w-full object-contain" />
-          </div>
-          <h3 class="text-lg font-semibold elegant-subheading text-gray-900">C2C Advanced Systems</h3>
-        </a>
+            <!-- Portfolio Item 5 -->
+            <div class="carousel-item">
+              <a href="https://sbsaviation.in/" target="_blank" 
+                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
+                <div class="flex justify-center items-center mb-4 h-20">
+                  <img src="/assets/investments/flysbs-logo.png" alt="FlySBS Logo" 
+                    class="max-h-full max-w-full object-contain" />
+                </div>
+                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">FlySBS</h3>
+              </a>
+            </div>
 
-        <a href="https://www.gh2solar.com/" target="_blank" 
-          class="portfolio-card block bg-white rounded-xl shadow-md hover:shadow-lg p-6 border border-gray-100 text-center">
-          <div class="flex justify-center items-center mb-4 h-16">
-            <img src="/assets/investments/gh2 solar.png" alt="GH2 Solar Logo" 
-              class="max-h-full max-w-full object-contain" />
-          </div>
-          <h3 class="text-lg font-semibold elegant-subheading text-gray-900">GH2 Solar</h3>
-        </a>
+            <!-- Portfolio Item 4 -->
+            <div class="carousel-item">
+              <a href="https://jasmino.com/" target="_blank" 
+                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
+                <div class="flex justify-center items-center mb-4 h-20">
+                  <img src="/assets/investments/jasmino-logo.svg" alt="Jasmino Logo" 
+                    class="max-h-full max-w-full object-contain" />
+                </div>
+                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">Jasmino Corporation</h3>
+              </a>
+            </div>
 
-        <a href="https://rikun.co.in/" target="_blank" 
-          class="portfolio-card block bg-white rounded-xl shadow-md hover:shadow-lg p-6 border border-gray-100 text-center">
-          <div class="flex justify-center items-center mb-4 h-16">
-            <img src="/assets/investments/rikun-logo.jpg" alt="Rikun Logo" 
-              class="max-h-full max-w-full object-contain" />
+            <!-- Portfolio Item 3 -->
+            <div class="carousel-item">
+              <a href="https://c2c-as.com/" target="_blank" 
+                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
+                <div class="flex justify-center items-center mb-4 h-20">
+                  <img src="/assets/investments/c2c-logo.svg" alt="C2C Logo" 
+                    class="max-h-full max-w-full object-contain" />
+                </div>
+                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">C2C Advanced Systems</h3>
+              </a>
+            </div>
+
+            <!-- Portfolio Item 2 -->
+            <div class="carousel-item">
+              <a href="https://www.gh2solar.com/" target="_blank" 
+                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
+                <div class="flex justify-center items-center mb-4 h-20">
+                  <img src="/assets/investments/gh2 solar.png" alt="GH2 Solar Logo" 
+                    class="max-h-full max-w-full object-contain" />
+                </div>
+                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">GH2 Solar</h3>
+              </a>
+            </div>
+
+            <!-- Portfolio Item 1 -->
+            <div class="carousel-item">
+              <a href="https://rikun.co.in/" target="_blank" 
+                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
+                <div class="flex justify-center items-center mb-4 h-20">
+                  <img src="/assets/investments/rikun-logo.jpg" alt="Rikun Logo" 
+                    class="max-h-full max-w-full object-contain" />
+                </div>
+                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">Rikun Electricals</h3>
+              </a>
+            </div>
           </div>
-          <h3 class="text-lg font-semibold elegant-subheading text-gray-900">Rikun Electricals</h3>
-        </a>
+        </div>
+
+        <button class="carousel-btn carousel-btn-next" id="nextBtn">
+          <i class="fas fa-chevron-right text-gray-600"></i>
+        </button>
+
+        <!-- Carousel Indicators -->
+        <div class="flex justify-center mt-8 space-x-2" id="carouselIndicators"></div>
       </div>
     </div>
   </section>
 
   <!-- Team Section -->
-  <section id="team" class="py-16 bg-white">
+  <section id="team" class="py-16 bg-gray-50">
     <div class="container mx-auto px-6">
       <div class="bg-gray-900 rounded-2xl p-8">
         <div class="text-center mb-10">
@@ -376,33 +376,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script>
-    // Mobile menu toggle
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-    
-    // Hide mobile menu when clicking navigation links
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('mobile-menu').classList.add('hidden');
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

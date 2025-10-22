@@ -1,6 +1,6 @@
 // Mobile menu toggle
 document.getElementById('hamburger').addEventListener('click', () => {
-  document.getElementById('mobile-menu').classList.toggle('hidden');
+  document.getElementById('mobile-menu').classList.toggle('show');
 });
 
 // Smooth scrolling for navigation links
@@ -20,7 +20,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Hide mobile menu when clicking navigation links
 document.querySelectorAll('#mobile-menu a').forEach(link => {
   link.addEventListener('click', () => {
-    document.getElementById('mobile-menu').classList.add('hidden');
+    document.getElementById('mobile-menu').classList.remove('show');
   });
 });
 
@@ -105,7 +105,7 @@ function moveCarousel() {
   
   // Get current dimensions
   const itemWidth = items[0].offsetWidth;
-  const gap = 32; // 2rem gap
+  const gap = parseFloat(getComputedStyle(track).gap) || 32;
   const offset = -(currentIndex * (itemWidth + gap));
   
   // Apply transform
@@ -118,7 +118,7 @@ function moveCarousel() {
   // Reset animation flag after transition completes
   setTimeout(() => {
     isAnimating = false;
-  }, 600); // Match the CSS transition duration
+  }, 600);
 }
 
 // Go to specific page
@@ -139,7 +139,7 @@ nextBtn.addEventListener('click', () => {
   const maxIndex = Math.max(0, items.length - itemsPerView);
   
   if (currentIndex < maxIndex) {
-    currentIndex += 1; // Move one item at a time for smoother experience
+    currentIndex += 1;
     if (currentIndex > maxIndex) {
       currentIndex = maxIndex;
     }
@@ -152,7 +152,7 @@ prevBtn.addEventListener('click', () => {
   if (isAnimating) return;
   
   if (currentIndex > 0) {
-    currentIndex -= 1; // Move one item at a time for smoother experience
+    currentIndex -= 1;
     if (currentIndex < 0) {
       currentIndex = 0;
     }

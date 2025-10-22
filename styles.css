@@ -1,4 +1,6 @@
-/* Global Styles */
+/* ==============================================
+   1. GLOBAL STYLES & RESET
+   ============================================== */
 html { 
   scroll-behavior: smooth; 
 }
@@ -10,12 +12,19 @@ body, * {
   box-sizing: border-box;
 }
 
-/* Playfair Display specifically for TSG Capital branding */
+body {
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+
+/* ==============================================
+   2. TYPOGRAPHY - WITH RESPONSIVE SIZING
+   ============================================== */
 .tsg-brand {
   font-family: 'Playfair Display', serif !important;
 }
 
-/* Maintain elegant styling with Arial */
 .elegant-heading {
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -31,6 +40,7 @@ body, * {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: 0.01em;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
 }
 
 .elegant-light {
@@ -38,19 +48,71 @@ body, * {
   letter-spacing: 0.02em;
 }
 
-/* Utility Classes */
-.gradient-overlay { 
-  background: linear-gradient(135deg, rgba(17,24,39,0.8) 0%, rgba(31,41,55,0.9) 100%); 
+
+/* ==============================================
+   3. HEADER BANNER
+   ============================================== */
+.header-banner {
+  background: linear-gradient(90deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+  height: clamp(32px, 5vh, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #333;
+  color: white;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  font-weight: 500;
+  letter-spacing: 0.15em;
 }
 
-.text-shadow { 
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
+
+/* ==============================================
+   4. NAVIGATION
+   ============================================== */
+.navbar {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e5e7eb;
+  position: relative;
 }
 
-/* Navigation Styles */
-.nav-link { 
-  position: relative; 
-  transition: all 0.3s ease;
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(0.5rem, 1.5vw, 0.75rem) 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #111827;
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+}
+
+.nav-logo {
+  height: clamp(2rem, 4vw, 2.5rem);
+}
+
+.nav-links {
+  display: none;
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.nav-link {
+  position: relative;
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  transition: color 0.3s ease;
 }
 
 .nav-link::after {
@@ -64,78 +126,231 @@ body, * {
   transition: width 0.3s ease;
 }
 
+.nav-link:hover {
+  color: #111827;
+}
+
 .nav-link:hover::after {
   width: 100%;
 }
 
-/* Header Banner */
-.header-banner {
-  background: linear-gradient(90deg, #000000 0%, #1a1a1a 50%, #000000 100%);
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid #333;
+.hamburger {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #1f2937;
+  padding: 0.5rem;
+  z-index: 60;
 }
 
-/* Improved Carousel Styles */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: auto;
+  min-width: 160px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #e5e7eb;
+  z-index: 50;
+  flex-direction: column;
+  gap: 0;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.mobile-menu.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mobile-menu a {
+  color: #374151;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(0.813rem, 1.5vw, 0.875rem);
+  padding: 0.75rem 1.25rem;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu a:hover {
+  background-color: #f9fafb;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+}
+
+
+/* ==============================================
+   5. HERO SECTION
+   ============================================== */
+.hero-section {
+  position: relative;
+  height: clamp(500px, 100vh, 100vh);
+  background-image: url('/assets/homepage/hero-background.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(17,24,39,0.8) 0%, rgba(31,41,55,0.9) 100%);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: clamp(2rem, 5vh, 4rem);
+}
+
+.hero-text h1 {
+  font-size: clamp(1.75rem, 4.5vw, 4.5rem);
+  color: white;
+  margin-bottom: clamp(1rem, 2vh, 1.5rem);
+  line-height: 1.15;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-text p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #e5e7eb;
+  max-width: 48rem;
+  margin: 0 auto clamp(1rem, 2vh, 2rem);
+}
+
+
+/* ==============================================
+   6. SECTION LAYOUTS - REDUCED SPACING
+   ============================================== */
+.section-white {
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  background-color: white;
+}
+
+.section-white#investments {
+  padding-top: clamp(1rem, 2vw, 1.5rem);
+}
+
+.section-gray {
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  background-color: #f9fafb;
+}
+
+.section-dark {
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  background-color: #111827;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.section-header h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+  color: #111827;
+}
+
+.section-header p {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: #4b5563;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.section-header-light h2 {
+  color: white;
+}
+
+.section-header-light p {
+  color: #d1d5db;
+}
+
+.section-divider {
+  width: clamp(3rem, 8vw, 5rem);
+  height: 0.25rem;
+  background-color: #1f2937;
+  margin: 0 auto clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.section-divider-light {
+  background-color: white;
+}
+
+
+/* ==============================================
+   7. CAROUSEL
+   ============================================== */
 .carousel-container {
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 clamp(50px, 8vw, 80px);
 }
 
 .carousel-wrapper {
   overflow: hidden;
-  border-radius: 16px;
-  padding: 20px 0;
+  border-radius: 1rem;
+  padding: clamp(0.75rem, 1.5vw, 1.25rem) 0;
 }
 
 .carousel-track {
   display: flex;
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  gap: 2rem;
+  gap: clamp(1rem, 2.5vw, 2rem);
   will-change: transform;
+  user-select: none;
+  transform: translateZ(0);
 }
 
 .carousel-item {
   flex: 0 0 calc(25% - 1.5rem);
   min-width: 0;
-  box-sizing: border-box;
 }
 
-/* Responsive breakpoints for carousel */
-@media (max-width: 1024px) {
-  .carousel-item {
-    flex: 0 0 calc(33.333% - 1.334rem);
-  }
-}
-
-@media (max-width: 768px) {
-  .carousel-item {
-    flex: 0 0 calc(50% - 1rem);
-  }
-  .carousel-container {
-    padding: 0 60px;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel-container {
-    padding: 0 50px;
-  }
-}
-
-/* Carousel Navigation Buttons */
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: white;
   border: 2px solid #e5e7eb;
-  width: 48px;
-  height: 48px;
+  width: clamp(40px, 6vw, 48px);
+  height: clamp(40px, 6vw, 48px);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -144,6 +359,11 @@ body, * {
   transition: all 0.3s ease;
   z-index: 10;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.carousel-btn i {
+  color: #4b5563;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
 }
 
 .carousel-btn:hover:not(:disabled) {
@@ -157,6 +377,12 @@ body, * {
   transform: translateY(-50%) scale(0.95);
 }
 
+.carousel-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #f3f4f6;
+}
+
 .carousel-btn-prev {
   left: 15px;
 }
@@ -165,129 +391,391 @@ body, * {
   right: 15px;
 }
 
-.carousel-btn:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  background: #f3f4f6;
-}
-
-/* Portfolio Card Styles - Improved */
-.portfolio-card {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 100%;
+.carousel-indicators {
   display: flex;
-  flex-direction: column;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  overflow: hidden;
-}
-
-.portfolio-card h3 {
-  word-break: keep-all;
-  overflow-wrap: normal;
-  hyphens: none;
-  padding: 0 4px;
-  width: 100%;
-  line-height: 1.3;
-  min-height: 2.6em;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  margin-top: clamp(1rem, 2vw, 2rem);
+  gap: 0.5rem;
 }
 
-.portfolio-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-  border-color: #9ca3af;
+.carousel-indicators button {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #d1d5db;
 }
 
-/* Mobile responsive text sizing - allow wrapping but not word breaking */
+.carousel-indicators button:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 1024px) {
+  .carousel-item {
+    flex: 0 0 calc(33.333% - 1.334rem);
+  }
+}
+
 @media (max-width: 768px) {
-  .portfolio-card h3 {
-    font-size: clamp(0.7rem, 3.5vw, 1rem);
+  .carousel-item {
+    flex: 0 0 calc(50% - 1rem);
   }
   
-  .portfolio-card {
-    padding: 1rem !important;
+  .carousel-container {
+    padding: 0 60px;
   }
 }
 
 @media (max-width: 480px) {
-  .portfolio-card h3 {
-    font-size: clamp(0.65rem, 3vw, 0.875rem);
-  }
-  
-  .portfolio-card {
-    padding: 0.75rem !important;
+  .carousel-container {
+    padding: 0 50px;
   }
 }
 
-/* Extra small screens */
+
+/* ==============================================
+   8. PORTFOLIO CARDS
+   ============================================== */
+.portfolio-card {
+  display: block;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f3f4f6;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+}
+
+.portfolio-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: clamp(3.5rem, 7vw, 5rem);
+  width: 100%;
+  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.portfolio-logo img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.portfolio-card h3 {
+  color: #111827;
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15) !important;
+  border-color: #9ca3af !important;
+}
+
+@media (max-width: 768px) {
+  .portfolio-card {
+    padding: 1rem;
+  }
+  
+  .portfolio-card h3 {
+    font-size: clamp(0.7rem, 3.5vw, 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-card {
+    padding: 0.75rem;
+  }
+  
+  .portfolio-card h3 {
+    font-size: clamp(0.65rem, 3vw, 0.875rem);
+  }
+}
+
 @media (max-width: 360px) {
   .portfolio-card h3 {
     font-size: clamp(0.6rem, 2.8vw, 0.75rem);
   }
 }
 
-/* Update Card Styles */
+
+/* ==============================================
+   9. TEAM SECTION
+   ============================================== */
+.team-wrapper {
+  background-color: #111827;
+  border-radius: 1rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.team-card {
+  display: block;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  transform: translateZ(0);
+}
+
+.team-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+.team-avatar {
+  width: clamp(4rem, 8vw, 5rem);
+  height: clamp(4rem, 8vw, 5rem);
+  margin: 0 auto clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f3f4f6;
+}
+
+.team-card h3 {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  margin-bottom: 0.25rem;
+  color: #111827;
+}
+
+.team-card p {
+  color: #4b5563;
+  font-size: clamp(0.813rem, 1.5vw, 0.875rem);
+}
+
+@media (min-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* ==============================================
+   10. CONTACT SECTION
+   ============================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 3vw, 2rem);
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.contact-cta {
+  text-align: center;
+}
+
+.contact-cta p {
+  font-size: clamp(1.063rem, 2vw, 1.25rem);
+  color: white;
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: clamp(0.625rem, 1.5vw, 0.75rem) clamp(1.5rem, 3vw, 2rem);
+  background-color: #16a34a;
+  color: white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: clamp(0.938rem, 1.5vw, 1rem);
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #15803d;
+  transform: scale(1.05);
+}
+
+.whatsapp-btn i {
+  font-size: clamp(1.063rem, 2vw, 1.25rem);
+}
+
+.office-card {
+  background-color: #1f2937;
+  border-radius: 0.75rem;
+  padding: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+
+.office-card h3 {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  color: white;
+  margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.office-details {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.office-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.office-item i {
+  color: white;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.office-item p {
+  color: #d1d5db;
+  font-size: clamp(0.813rem, 1.5vw, 0.875rem);
+  line-height: 1.5;
+}
+
+.office-item a {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.office-item a:hover {
+  text-decoration: underline;
+}
+
+.linkedin-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(1.75rem, 3vw, 2rem);
+  height: clamp(1.75rem, 3vw, 2rem);
+  background-color: #2563eb;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.linkedin-icon:hover {
+  background-color: #1d4ed8;
+}
+
+.linkedin-icon i {
+  font-size: clamp(0.813rem, 1.5vw, 0.875rem);
+  color: white;
+}
+
+.map-container {
+  height: clamp(300px, 50vw, 400px);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .contact-cta {
+    text-align: left;
+  }
+}
+
+
+/* ==============================================
+   11. FOOTER
+   ============================================== */
+.footer {
+  background-color: #000000;
+  color: #9ca3af;
+  padding: clamp(0.75rem, 1.5vw, 1rem) 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-brand img {
+  height: clamp(1rem, 2vw, 1.25rem);
+}
+
+.footer-brand span {
+  font-size: clamp(0.938rem, 1.5vw, 1rem);
+  font-weight: 700;
+  color: white;
+}
+
+.footer p {
+  color: #6b7280;
+  text-align: center;
+  font-size: clamp(0.688rem, 1.5vw, 0.75rem);
+}
+
+
+/* ==============================================
+   12. UTILITY & ANIMATIONS
+   ============================================== */
+a, button {
+  transition: all 0.3s ease;
+}
+
 .update-card {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .update-card:hover {
-  transform: translateY(-4px) translateZ(0);
+  transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* LinkedIn Embed Styles */
-.linkedin-embed-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.linkedin-embed-container iframe {
-  width: 100%;
-  border: none;
-  min-height: 500px;
-}
-
-/* Carousel Indicators */
-#carouselIndicators button {
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
-  padding: 0;
-  outline: none;
-}
-
-#carouselIndicators button:hover {
-  opacity: 0.8;
-}
-
-/* Prevent text selection during carousel interaction */
-.carousel-track {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-/* Hardware acceleration for smooth animations */
-.carousel-track,
-.portfolio-card,
-.update-card {
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-}
-
-/* Smooth transitions for all interactive elements */
-a, button {
-  transition: all 0.3s ease;
+.hero-text {
+  max-width: 80rem;
+  margin: 0 auto;
 }

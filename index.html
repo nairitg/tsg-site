@@ -4,301 +4,264 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TSG Capital</title>
+  
   <!-- Favicon Links -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/tsg-favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/tsg-favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/tsg-favicons/favicon-16x16.png">
   <link rel="manifest" href="tsg-favicons/site.webmanifest">
   <link rel="icon" href="/assets/tsg-favicons/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="/assets/logos/tsg-logo.png" type="image/svg+xml" />
   
-  <!-- Import Playfair Display for TSG Capital branding -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Styles -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-  <!-- OM NAMAH SHIVAY Header -->
+  <!-- Header Banner -->
   <div class="header-banner">
-    <h1 class="text-white text-sm font-medium tracking-widest elegant-heading">:OM NAMAH SHIVAY:</h1>
+    <h1 class="elegant-heading">:OM NAMAH SHIVAY:</h1>
   </div>
 
-  <!-- Enhanced Navbar -->
-  <nav class="w-full bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200">
-    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-      <a href="#home" class="flex items-center space-x-3">
-        <img src="/assets/logos/tsg-logo.png" alt="TSG Capital" class="h-10" />
-        <span class="text-2xl font-bold tsg-brand text-gray-900">TSG Capital</span>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand">
+        <img src="/assets/logos/tsg-logo.png" alt="TSG Capital" class="nav-logo" />
+        <span class="tsg-brand">TSG Capital</span>
       </a>
-      <div class="hidden md:flex space-x-8">
-        <a href="#home" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Home</a>
-        <a href="#about" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">About</a>
-        <a href="#updates" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Updates</a>
-        <a href="#investments" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Portfolio</a>
-        <a href="#team" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Team</a>
-        <a href="#contact" class="nav-link text-gray-700 hover:text-gray-900 font-medium elegant-body">Contact</a>
+      <div class="nav-links">
+        <a href="#home" class="nav-link elegant-body">Home</a>
+        <a href="#about" class="nav-link elegant-body">About</a>
+        <a href="#investments" class="nav-link elegant-body">Portfolio</a>
+        <a href="#team" class="nav-link elegant-body">Team</a>
+        <a href="#contact" class="nav-link elegant-body">Contact</a>
       </div>
-      <button id="hamburger" class="md:hidden focus:outline-none">
-        <i class="fas fa-bars text-xl text-gray-800"></i>
+      <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-white/95 backdrop-blur-md shadow-lg p-6 z-50">
-      <div class="flex flex-col space-y-4">
-        <a href="#home" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Home</a>
-        <a href="#about" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">About</a>
-        <a href="#updates" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Updates</a>
-        <a href="#investments" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Portfolio</a>
-        <a href="#team" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Team</a>
-        <a href="#contact" class="text-gray-700 hover:text-gray-900 font-medium elegant-body">Contact</a>
-      </div>
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="#home" class="elegant-body">Home</a>
+      <a href="#about" class="elegant-body">About</a>
+      <a href="#updates" class="elegant-body">Updates</a>
+      <a href="#investments" class="elegant-body">Portfolio</a>
+      <a href="#team" class="elegant-body">Team</a>
+      <a href="#contact" class="elegant-body">Contact</a>
     </div>
   </nav>
 
-  <!-- Enhanced Hero Section -->
-  <section id="home" class="relative bg-cover bg-center h-screen" style="background-image:url('/assets/homepage/hero-background.png')">
-    <div class="absolute inset-0 gradient-overlay"></div>
-    <div class="relative container mx-auto px-6 h-full flex flex-col justify-center items-center text-center pt-16">
-      <div class="max-w-5xl mx-auto">
-        <h1 class="text-4xl md:text-6xl lg:text-7xl text-white mb-6 elegant-heading text-shadow leading-tight">
-          Strategic Private Equity for Extraordinary Growth
-        </h1>
-        <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed elegant-light">
-          Looking forward, always.
-        </p>
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="elegant-heading">Strategic Private Equity for Extraordinary Growth</h1>
+        <p class="elegant-light">Looking forward, always.</p>
       </div>
     </div>
   </section>
 
-  <!-- Enhanced About Section -->
-  <section id="about" class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 elegant-heading text-gray-900">About</h2>
-        <div class="w-20 h-1 bg-gray-800 mx-auto mb-6"></div>
-        <p class="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed elegant-body">
+  <!-- About Section -->
+  <section id="about" class="section-white">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="elegant-heading">About</h2>
+        <div class="section-divider"></div>
+        <p class="elegant-body">
           We are strategic investors across capital markets, real estate, and late-stage private opportunities. Our investment approach is to identify and nurture high-potential ventures. We maintain a sector-agnostic approach with a particular focus on companies poised for exponential growth. We leverage our extensive network to amplify the growth of our portfolio companies - working with the end goal of creating something generational.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Enhanced Portfolio Section with Improved Carousel -->
-  <section id="investments" class="py-16 bg-white">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 elegant-heading text-gray-900">Portfolio Companies</h2>
-        <div class="w-20 h-1 bg-gray-800 mx-auto mb-6"></div>
-        <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed elegant-body">
+  <!-- Portfolio Section -->
+  <section id="investments" class="section-white">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="elegant-heading">Portfolio Companies</h2>
+        <div class="section-divider"></div>
+        <p class="elegant-body">
           Our carefully curated portfolio represents innovation across high-growth sectors, each company chosen for its exceptional potential and leadership.
         </p>
       </div>
 
       <div class="carousel-container">
-        <button class="carousel-btn carousel-btn-prev" id="prevBtn">
-          <i class="fas fa-chevron-left text-gray-600"></i>
+        <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Previous">
+          <i class="fas fa-chevron-left"></i>
         </button>
         
         <div class="carousel-wrapper">
           <div class="carousel-track" id="carouselTrack">
 
-            <!-- Portfolio Item 7 -->
             <div class="carousel-item">
-              <a href="https://www.kshemapower.com/" target="_blank" 
-                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
-                <div class="flex justify-center items-center mb-4 h-20">
-                  <img src="/assets/investments/kshema-logo.png" alt="Kshema Power Logo" 
-                    class="max-h-full max-w-full object-contain" />
+              <a href="https://www.kshemapower.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card">
+                <div class="portfolio-logo">
+                  <img src="/assets/investments/kshema-logo.png" alt="Kshema Power Logo" />
                 </div>
-                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">Kshema Power</h3>
+                <h3 class="elegant-subheading">Kshema Power</h3>
               </a>
             </div>
 
-            <!-- Portfolio Item 6 -->
             <div class="carousel-item">
-              <a href="https://www.shreeref.com/" target="_blank" 
-                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
-                <div class="flex justify-center items-center mb-4 h-20">
-                  <img src="/assets/investments/shree-refrigerations-logo.png" alt="Shree Refrigerations Logo" 
-                    class="max-h-full max-w-full object-contain" />
+              <a href="https://www.shreeref.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card">
+                <div class="portfolio-logo">
+                  <img src="/assets/investments/shree-refrigerations-logo.png" alt="Shree Refrigerations Logo" />
                 </div>
-                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">Shree Refrigerations Ltd</h3>
+                <h3 class="elegant-subheading">Shree Refrigerations Ltd</h3>
               </a>
             </div>
 
-            <!-- Portfolio Item 5 -->
             <div class="carousel-item">
-              <a href="https://sbsaviation.in/" target="_blank" 
-                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
-                <div class="flex justify-center items-center mb-4 h-20">
-                  <img src="/assets/investments/flysbs-logo.png" alt="FlySBS Aviation Logo" 
-                    class="max-h-full max-w-full object-contain" />
+              <a href="https://sbsaviation.in/" target="_blank" rel="noopener noreferrer" class="portfolio-card">
+                <div class="portfolio-logo">
+                  <img src="/assets/investments/flysbs-logo.png" alt="FlySBS Aviation Logo" />
                 </div>
-                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">FlySBS Aviation</h3>
+                <h3 class="elegant-subheading">FlySBS Aviation</h3>
               </a>
             </div>
 
-            <!-- Portfolio Item 4 -->
             <div class="carousel-item">
-              <a href="https://jasmino.com/" target="_blank" 
-                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
-                <div class="flex justify-center items-center mb-4 h-20">
-                  <img src="/assets/investments/jasmino-logo.svg" alt="Jasmino Logo" 
-                    class="max-h-full max-w-full object-contain" />
+              <a href="https://jasmino.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card">
+                <div class="portfolio-logo">
+                  <img src="/assets/investments/jasmino-logo.svg" alt="Jasmino Logo" />
                 </div>
-                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">Jasmino Corporation</h3>
+                <h3 class="elegant-subheading">Jasmino Corporation</h3>
               </a>
             </div>
 
-            <!-- Portfolio Item 3 -->
             <div class="carousel-item">
-              <a href="https://c2c-as.com/" target="_blank" 
-                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
-                <div class="flex justify-center items-center mb-4 h-20">
-                  <img src="/assets/investments/c2c-logo.svg" alt="C2C Logo" 
-                    class="max-h-full max-w-full object-contain" />
+              <a href="https://c2c-as.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card">
+                <div class="portfolio-logo">
+                  <img src="/assets/investments/c2c-logo.svg" alt="C2C Logo" />
                 </div>
-                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">C2C Advanced Systems</h3>
+                <h3 class="elegant-subheading">C2C Advanced Systems</h3>
               </a>
             </div>
 
-            <!-- Portfolio Item 2 -->
             <div class="carousel-item">
-              <a href="https://www.gh2solar.com/" target="_blank" 
-                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
-                <div class="flex justify-center items-center mb-4 h-20">
-                  <img src="/assets/investments/gh2 solar.png" alt="GH2 Solar Logo" 
-                    class="max-h-full max-w-full object-contain" />
+              <a href="https://www.gh2solar.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card">
+                <div class="portfolio-logo">
+                  <img src="/assets/investments/gh2 solar.png" alt="GH2 Solar Logo" />
                 </div>
-                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">GH2 Solar</h3>
+                <h3 class="elegant-subheading">GH2 Solar</h3>
               </a>
             </div>
 
-            <!-- Portfolio Item 1 -->
             <div class="carousel-item">
-              <a href="https://rikun.co.in/" target="_blank" 
-                class="portfolio-card bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 text-center">
-                <div class="flex justify-center items-center mb-4 h-20">
-                  <img src="/assets/investments/rikun-logo.jpg" alt="Rikun Logo" 
-                    class="max-h-full max-w-full object-contain" />
+              <a href="https://rikun.co.in/" target="_blank" rel="noopener noreferrer" class="portfolio-card">
+                <div class="portfolio-logo">
+                  <img src="/assets/investments/rikun-logo.jpg" alt="Rikun Logo" />
                 </div>
-                <h3 class="text-lg font-semibold elegant-subheading text-gray-900">Rikun Electricals</h3>
+                <h3 class="elegant-subheading">Rikun Electricals</h3>
               </a>
             </div>
+
           </div>
         </div>
 
-        <button class="carousel-btn carousel-btn-next" id="nextBtn">
-          <i class="fas fa-chevron-right text-gray-600"></i>
+        <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Next">
+          <i class="fas fa-chevron-right"></i>
         </button>
 
-        <!-- Carousel Indicators -->
-        <div class="flex justify-center mt-8 space-x-2" id="carouselIndicators"></div>
+        <div class="carousel-indicators" id="carouselIndicators"></div>
       </div>
     </div>
   </section>
 
   <!-- Team Section -->
-  <section id="team" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <div class="bg-gray-900 rounded-2xl p-8">
-        <div class="text-center mb-10">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 elegant-heading text-white">Leadership Team</h2>
-          <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
+  <section id="team" class="section-gray">
+    <div class="container">
+      <div class="team-wrapper">
+        <div class="section-header section-header-light">
+          <h2 class="elegant-heading">Leadership Team</h2>
+          <div class="section-divider section-divider-light"></div>
         </div>
         
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <a href="https://www.linkedin.com/in/nairit69/" target="_blank" 
-            class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 text-center transform hover:-translate-y-1">
-            <div class="w-20 h-20 mx-auto mb-3">
-              <img src="/assets/tsg-team/nairit.jpg" alt="Nairit Gala" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
+        <div class="team-grid">
+          <a href="https://www.linkedin.com/in/nairit69/" target="_blank" rel="noopener noreferrer" class="team-card">
+            <div class="team-avatar">
+              <img src="/assets/tsg-team/nairit.jpg" alt="Nairit Gala" />
             </div>
-            <h3 class="text-lg font-semibold mb-1 elegant-subheading text-gray-900">Nairit Gala</h3>
-            <p class="text-gray-600 text-sm font-medium elegant-body">Chief Investment Officer</p>
+            <h3 class="elegant-subheading">Nairit Gala</h3>
+            <p class="elegant-body">Chief Investment Officer</p>
           </a>
 
-          <a href="https://www.linkedin.com/in/aairan/" target="_blank" 
-            class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 text-center transform hover:-translate-y-1">
-            <div class="w-20 h-20 mx-auto mb-3">
-              <img src="/assets/tsg-team/aaryan.jpeg" alt="Aaryan Bhagat" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
+          <a href="https://www.linkedin.com/in/aairan/" target="_blank" rel="noopener noreferrer" class="team-card">
+            <div class="team-avatar">
+              <img src="/assets/tsg-team/aaryan.jpeg" alt="Aaryan Bhagat" />
             </div>
-            <h3 class="text-lg font-semibold mb-1 elegant-subheading text-gray-900">Aaryan Bhagat</h3>
-            <p class="text-gray-600 text-sm font-medium elegant-body">Analyst</p>
+            <h3 class="elegant-subheading">Aaryan Bhagat</h3>
+            <p class="elegant-body">Analyst</p>
           </a>
 
-          <a href="https://www.linkedin.com/in/viraj-shah-a530372a2/" target="_blank" 
-            class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 text-center transform hover:-translate-y-1">
-            <div class="w-20 h-20 mx-auto mb-3">
-              <img src="/assets/tsg-team/viraj.svg" alt="Viraj Shah" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
+          <a href="https://www.linkedin.com/in/viraj-shah-a530372a2/" target="_blank" rel="noopener noreferrer" class="team-card">
+            <div class="team-avatar">
+              <img src="/assets/tsg-team/viraj.svg" alt="Viraj Shah" />
             </div>
-            <h3 class="text-lg font-semibold mb-1 elegant-subheading text-gray-900">Viraj Shah</h3>
-            <p class="text-gray-600 text-sm font-medium elegant-body">Business Development</p>
+            <h3 class="elegant-subheading">Viraj Shah</h3>
+            <p class="elegant-body">Business Development</p>
           </a>
 
-          <a href="https://www.linkedin.com/in/vansh-gosar-a396b1270/" target="_blank" 
-            class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 text-center transform hover:-translate-y-1">
-            <div class="w-20 h-20 mx-auto mb-3">
-              <img src="/assets/tsg-team/vansh.svg" alt="Vansh Gosar" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
+          <a href="https://www.linkedin.com/in/vansh-gosar-a396b1270/" target="_blank" rel="noopener noreferrer" class="team-card">
+            <div class="team-avatar">
+              <img src="/assets/tsg-team/vansh.svg" alt="Vansh Gosar" />
             </div>
-            <h3 class="text-lg font-semibold mb-1 elegant-subheading text-gray-900">Vansh Gosar</h3>
-            <p class="text-gray-600 text-sm font-medium elegant-body">Analyst</p>
+            <h3 class="elegant-subheading">Vansh Gosar</h3>
+            <p class="elegant-body">Analyst</p>
           </a>
 
-          <a href="https://www.linkedin.com/in/aarish-shah-8528b6275/" target="_blank" 
-            class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 text-center transform hover:-translate-y-1">
-            <div class="w-20 h-20 mx-auto mb-3">
-              <img src="/assets/tsg-team/aarish.svg" alt="Aarish Shah" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
+          <a href="https://www.linkedin.com/in/aarish-shah-8528b6275/" target="_blank" rel="noopener noreferrer" class="team-card">
+            <div class="team-avatar">
+              <img src="/assets/tsg-team/aarish.svg" alt="Aarish Shah" />
             </div>
-            <h3 class="text-lg font-semibold mb-1 elegant-subheading text-gray-900">Aarish Shah</h3>
-            <p class="text-gray-600 text-sm font-medium elegant-body">Analyst</p>
+            <h3 class="elegant-subheading">Aarish Shah</h3>
+            <p class="elegant-body">Analyst</p>
           </a>
 
-          <a href="https://www.linkedin.com/in/deeepp/" target="_blank" 
-            class="block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 text-center transform hover:-translate-y-1">
-            <div class="w-20 h-20 mx-auto mb-3">
-              <img src="/assets/tsg-team/deep.svg" alt="Deep Shah" class="rounded-full object-cover w-full h-full border-2 border-gray-100" />
+          <a href="https://www.linkedin.com/in/deeepp/" target="_blank" rel="noopener noreferrer" class="team-card">
+            <div class="team-avatar">
+              <img src="/assets/tsg-team/deep.svg" alt="Deep Shah" />
             </div>
-            <h3 class="text-lg font-semibold mb-1 elegant-subheading text-gray-900">Deep Shah</h3>
-            <p class="text-gray-600 text-sm font-medium elegant-body">Business Development</p>
+            <h3 class="elegant-subheading">Deep Shah</h3>
+            <p class="elegant-body">Business Development</p>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Enhanced Contact Section -->
-  <section id="contact" class="py-16 bg-gray-900">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 elegant-heading text-white">Connect With Us</h2>
-        <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
-        <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed elegant-body mb-8">
-          Ready to explore strategic partnership opportunities? 
-        </p>
+  <!-- Contact Section -->
+  <section id="contact" class="section-dark">
+    <div class="container">
+      <div class="section-header section-header-light">
+        <h2 class="elegant-heading">Connect With Us</h2>
+        <div class="section-divider section-divider-light"></div>
+        <p class="elegant-body">Ready to explore strategic partnership opportunities?</p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-        <!-- Left side - Contact Info -->
-        <div class="space-y-6">
-          <div class="text-center lg:text-left">
-            <p class="text-xl text-white mb-6 elegant-light">
-              Catch up over coconut water?
-            </p>
-            <a href="https://wa.me/+917021314949" class="inline-flex items-center space-x-3 px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-all transform hover:scale-105 font-semibold elegant-subheading">
-              <i class="fab fa-whatsapp text-xl"></i>
-              <span>Chat with us</span>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-cta">
+            <p class="elegant-light">Catch up over coconut water?</p>
+            <a href="https://wa.me/+917021314949" class="whatsapp-btn">
+              <i class="fab fa-whatsapp"></i>
+              <span class="elegant-subheading">Chat with us</span>
             </a>
           </div>
 
-          <div class="bg-gray-800 rounded-xl p-6">
-            <h3 class="text-xl font-semibold text-white mb-4 elegant-subheading">Mumbai Office</h3>
-            <div class="space-y-4">
-              <div class="flex items-start space-x-3">
-                <i class="fas fa-map-marker-alt text-white text-lg mt-1"></i>
+          <div class="office-card">
+            <h3 class="elegant-subheading">Mumbai Office</h3>
+            <div class="office-details">
+              <div class="office-item">
+                <i class="fas fa-map-marker-alt"></i>
                 <div>
-                  <p class="text-gray-300 text-sm leading-relaxed elegant-body">
-                    <a href="https://www.google.com/maps/place/Bombay+Stock+Exchange/@18.9299891,72.8308331,17z/data=!3m2!4b1!5s0x3be7ceffab3f7fd9:0x6dac2cecd0ede18b!4m6!3m5!1s0x3be7d1c363d83329:0xc3516cb22743963b!8m2!3d18.9299891!4d72.833408!16s%2Fg%2F11b77pw1yr?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                  <p class="elegant-body">
+                    <a href="https://www.google.com/maps/place/Bombay+Stock+Exchange/@18.9299891,72.8308331,17z" target="_blank" rel="noopener noreferrer">
                       R415, Rotunda Building<br />
                       Bombay Stock Exchange Building<br />
                       726, Mumbai Samachar Marg<br />
@@ -308,48 +271,38 @@
                   </p>
                 </div>
               </div>
-              <div class="flex items-center space-x-3">
-                <i class="fas fa-envelope text-white text-lg"></i>
-                <p class="text-gray-300 text-sm elegant-body">
-                  <a href="mailto:nairit@tsgcapital.in" class="hover:underline">nairit@tsgcapital.in</a>
+              <div class="office-item">
+                <i class="fas fa-envelope"></i>
+                <p class="elegant-body">
+                  <a href="mailto:nairit@tsgcapital.in">nairit@tsgcapital.in</a>
                 </p>
-                <a href="https://www.linkedin.com/company/tsg-capital-in?originalSubdomain=in" 
-                   target="_blank" 
-                   class="inline-flex items-center justify-center w-8 h-8 bg-blue-600 hover:bg-blue-700 rounded-full transition-colors ml-2" 
-                   aria-label="LinkedIn">
-                  <i class="fab fa-linkedin text-sm text-white"></i>
+                <a href="https://www.linkedin.com/company/tsg-capital-in?originalSubdomain=in" target="_blank" rel="noopener noreferrer" class="linkedin-icon" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin"></i>
                 </a>
               </div>
             </div>
           </div>
         </div>
         
-        <!-- Right side - Map -->
-        <div class="h-[400px] rounded-xl overflow-hidden shadow-lg">
+        <div class="map-container">
           <iframe
             src="https://www.google.com/maps?q=Bombay+Stock+Exchange+Building,+726,+Mumbai+Samachar+Marg,+Kala+Ghoda,+Fort,+Mumbai,+Maharashtra+400001&output=embed"
-            width="100%"
-            height="100%"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
+            title="TSG Capital Mumbai Office Location"
           ></iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Simplified Footer -->
-  <footer class="bg-black text-gray-300 py-4">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col items-center space-y-2">
-        <div class="flex items-center space-x-3">
-          <img src="/assets/logos/tsg-logo.png" alt="TSG Capital" class="h-5" />
-          <span class="text-base font-bold tsg-brand text-white">TSG Capital</span>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="/assets/logos/tsg-logo.png" alt="TSG Capital" />
+          <span class="tsg-brand">TSG Capital</span>
         </div>
-        <p class="text-gray-500 text-center text-xs elegant-body">
-          &copy; 2025 TSG Capital. All rights reserved.
-        </p>
+        <p class="elegant-body">&copy; 2025 TSG Capital. All rights reserved.</p>
       </div>
     </div>
   </footer>

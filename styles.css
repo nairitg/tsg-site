@@ -151,27 +151,20 @@ body {
   top: 100%;
   right: 0;
   width: auto;
-  min-width: 160px;
-  background-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  background-color: #ffffff;  /* Solid white */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Stronger shadow */
   border-top: 1px solid #e5e7eb;
   border-left: 1px solid #e5e7eb;
   border-bottom: 1px solid #e5e7eb;
   border-radius: 0 0 0 0.5rem;
-  z-index: 50;
+  z-index: 99;  /* Higher z-index */
   flex-direction: column;
   gap: 0;
-  opacity: 0;
-  transform: translateY(-5px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  pointer-events: none;
 }
 
 .mobile-menu.show {
-  display: flex;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+  display: flex;  /* Simple show/hide, no opacity/transform */
 }
 
 .mobile-menu a {

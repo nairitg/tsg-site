@@ -75,7 +75,9 @@ body {
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #e5e7eb;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-container {
@@ -142,7 +144,8 @@ body {
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: #1f2937;
   padding: 0.5rem;
-  z-index: 60;
+  z-index: 1001; /* Increased from 60 */
+  position: relative;
 }
 
 .mobile-menu {
@@ -175,7 +178,7 @@ body {
   padding: 0.75rem 1.25rem;
   transition: background-color 0.2s ease;
   border-bottom: 1px solid #f3f4f6;
-  background-color: white;
+  background-color: #ffffff; /* Solid white background */
 }
 
 .mobile-menu a:last-child {
@@ -206,12 +209,14 @@ body {
   background-image: url('/assets/homepage/hero-background.png');
   background-size: cover;
   background-position: center;
+  z-index: 1; /* Added to establish stacking context below navbar */
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgba(17,24,39,0.8) 0%, rgba(31,41,55,0.9) 100%);
+  z-index: 1; /* Explicitly set */
 }
 
 .hero-content {
@@ -226,6 +231,7 @@ body {
   align-items: center;
   text-align: center;
   padding-top: clamp(2rem, 5vh, 4rem);
+  z-index: 2; /* Above overlay but below navbar */
 }
 
 .hero-text h1 {
